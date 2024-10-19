@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title }} - {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>{{ site.title | default: site.github.repository_name }}</h1>
+        <p>{{ site.description | default: site.github.project_tagline }}</p>
+        <p class="view"><a href="{{ site.baseurl }}/">Home</a></p>
+      </header>
+
+      <section>
+        <h1>{{ page.title }}</h1>
+        <div style="color:#000000;background-color:#ffdc4265;border-color:#ffdc4265;padding:.75rem 1.25rem;border-radius:.25rem;margin-bottom:1rem;text-align:center;">
+            <p style="font-size: 1.75rem;"><b> ⚠️ Coming Soon ⚠️ </b></p>
+            <p style="font-size: 1rem;">This page is under construction. Check back soon for updates!</p>
+        </div>
+
+        {{ content }}
+        {% assign current_part = nil %}
+        {% assign prev_part = nil %}
+        {% assign next_part = nil %}
+        {% for part in site.parts %}
+            {% if part.url == page.url %}
+                {% assign current_part = part %}
+            {% elsif current_part %}
+                {% assign next_part = part %}
+                {% break %}
+            {% else %}
+                {% assign prev_part = part %}
+            {% endif %}
+        {% endfor %}
+        {% if prev_part and current_part %}
+            <p><a class="previous_part" href="{{ site.baseurl }}{{ prev_part.url }}">{{prev_part.title}}</a> <br></p>
+        {% endif %}
+        {% if next_part %}
+            <p><a class="next_part" href="{{site.baseurl}}{{ next_part.url }}">{{next_part.title}}</a> <br></p>
+        {% endif %}
+      </section>
+
+      <footer>
+        {% if site.github.is_project_page %}
+        <p><a href="{{site.baseurl}}/feed.xml">rss</a> | <a href="https://ifttt.com/applets/60708433d-rss-feed-to-email">subscribe by email</a></p>
+        <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
+        {% endif %}
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+  </body>
+</html>
