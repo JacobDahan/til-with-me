@@ -12,7 +12,7 @@
   <body>
     <div class="wrapper">
       <header>
-        
+
         <h1>{{ site.title | default: site.github.repository_name }}</h1>
         <p>{{ site.description | default: site.github.project_tagline }}</p>
 
@@ -33,6 +33,10 @@
           <li><a href="{{ site.github.repository_url }}">View On <strong>GitHub</strong></a></li>
         </ul>
         {% endif %}
+
+        <div style="color:#000000;background-color:#ffdc4265;border-color:#ffdc4265;padding:.75rem 1.25rem;border-radius:.25rem;margin-bottom:1rem;text-align:center;">
+            <p><b>This project is under active development.</b><br><br>Please check back regularly for updates!</p>
+        </div>
 
       </header>
       
@@ -63,10 +67,7 @@
 
       </section>
       <footer>
-        {% if site.github.is_project_page %}
-        <p><a href="{{site.baseurl}}/feed.xml">rss</a> | <a href="https://ifttt.com/applets/60708433d-rss-feed-to-email">subscribe by email</a></p>
         <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
-        {% endif %}
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
