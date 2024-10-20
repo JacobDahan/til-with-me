@@ -31,6 +31,14 @@
         <div style="color:#000000;background-color:#ffdc4265;border-color:#ffdc4265;padding:.75rem 1.25rem;border-radius:.25rem;margin-bottom:1rem;text-align:center;">
             <p><b>This project is under active development.</b><br><br>Please check back regularly for updates!</p>
         </div>
+
+        <h3>Jump Right In</h3>
+        <ul>
+            {% for part in site.parts %}
+            <li><a href="{{ site.baseurl }}{{ part.url }}" class="{% if part.url == page.url %}disabled{% endif %}">{{ part.title }}</a></li>
+            {% endfor %}
+        </ul>
+
       </header>
 
       <section>

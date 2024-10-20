@@ -16,3 +16,10 @@ section {
     float: right !important;
     padding-bottom: 50px !important;
 }
+
+a.disabled {
+    pointer-events: none;
+    cursor: default;
+    color: #0000009c;
+    font-weight: bold;
+}
