@@ -1,5 +1,5 @@
 title: "TIL With Me"
-description: "Design, build, and deploy a Golang/Swift iOS app live, with me!"
+description: "Design, build, and deploy an iOS app, with me!"
 
 # Theme configuration
 remote_theme: pages-themes/minimal@v0.2.0

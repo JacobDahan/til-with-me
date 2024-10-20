@@ -3,3 +3,16 @@
 
 @import "{{ site.theme }}";
 @import "post";
+
+// Widen the content area
+
+.wrapper {
+    width: 920px !important;
+    margin: 0 auto !important;
+}
+
+section {
+    width: 600px !important;
+    float: right !important;
+    padding-bottom: 50px !important;
+}

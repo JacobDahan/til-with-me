@@ -2,6 +2,8 @@
 title: TIL With Me
 ---
 
+{% include_relative README.md %}
+
 # Table of Contents
 
 {% for part in site.parts %}
