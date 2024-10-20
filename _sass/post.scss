@@ -1,0 +1,15 @@
+a.previous_part {
+    float: left;
+}
+  
+a.previous_part:before {
+    content: "< "
+}
+
+a.next_part {
+    float: right;
+}
+
+a.next_part:after {
+    content: " >"
+}
